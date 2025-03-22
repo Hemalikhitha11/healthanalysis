@@ -1,14 +1,24 @@
-import React from 'react'
-import '../../Css/UserHome.css'
+import React from "react";
+import { motion } from "framer-motion";
 
-function Reports() {
-  return (
-    <>
-        <div className="main">
-            <h2>Reports</h2>
-        </div>
-    </>
-  )
-}
+const pageVariants = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    exit: { opacity: 0, y: -20, transition: { duration: 0.4, ease: "easeIn" } }
+};
 
-export default Reports
+const Reports = () => {
+    return (
+        <motion.div 
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+        >
+            <h1>Dashboard</h1>
+            <p>Welcome to your Reports!</p>
+        </motion.div>
+    );
+};
+
+export default Reports;

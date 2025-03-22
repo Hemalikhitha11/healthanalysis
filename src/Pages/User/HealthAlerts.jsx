@@ -1,14 +1,24 @@
-import React from 'react'
-import '../../Css/UserHome.css'
+import React from "react";
+import { motion } from "framer-motion";
 
-function HealthAlerts() {
-  return (
-    <>
-        <div className="main">
-            <h2>Health Alerts</h2>
-        </div>
-    </>
-  )
-}
+const pageVariants = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    exit: { opacity: 0, y: -20, transition: { duration: 0.4, ease: "easeIn" } }
+};
 
-export default HealthAlerts
+const HealthAlerts = () => {
+    return (
+        <motion.div 
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+        >
+            <h1>Dashboard</h1>
+            <p>Welcome to your Health Alerts!</p>
+        </motion.div>
+    );
+};
+
+export default HealthAlerts;

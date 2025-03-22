@@ -1,4 +1,350 @@
-.main{
+.main {
     position: relative;
-    top: 60px;
+    top: 75px;
+}
+
+.home-container {
+    display: flex;
+    justify-content:space-between;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    gap: 20px;
+    text-align: center;
+    /* height: 100vh; */
+}
+
+.home-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 25%;
+    border-radius: 20px;
+    height: 80vh;
+}
+.img-block{
+    width: 150px;
+    height: 150px;
+}
+.profile-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #38bdf8;
+}
+
+.name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #0f172a;
+}
+
+/* Personal Details */
+.personal-details,
+.medical-info {
+    margin-top: 10px;
+    text-align: left;
+    width: 100%;
+    padding: 0 2px;
+
+}
+
+.detail {
+    font-size: 1rem;
+    color: #333;
+    margin: 5px 0;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #0f172a;
+    text-decoration: underline;
+}
+.home-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background: white;
+    text-align: center;
+    /* Enable scrolling */
+    height: 80vh;
+    overflow-y: auto;
+}
+
+/* Hide scrollbar but keep scrolling */
+.home-right::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.home-right {
+    scrollbar-width: none;  /* For Firefox */
+    -ms-overflow-style: none;  /* For Internet Explorer */
+}
+
+/* Medical Info Section */
+.medi-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Two columns */
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.card-medi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(145deg, #1E293B, #334155); /* Dark Blue-Gray Gradient */
+    color: white;
+    border-radius: 12px;
+    min-width: 200px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card-medi:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.top-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    color: #93C5FD; /* Light Blue for better contrast */
+}
+
+.icon {
+    font-size: 24px;
+    color: #FACC15; /* Golden Yellow for contrast */
+}
+
+.card-medi h1 {
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.unit {
+    font-size: 20px;
+    color: #CBD5E1; /* Light Gray-Blue */
+}
+
+
+/* Recent Activity Section */
+.activity {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 15px; /* Space between items */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.activity-block {
+    background: #f1f5f9;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.activity-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #0f172a;
+}
+
+.activity-date {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+/* Appointments Section */
+.appointments {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 15px; /* Space between items */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.appointment {
+    background: #eef2ff;
+    padding: 15px;
+    margin: 5px 0;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.doctor {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.date, .time {
+    font-size: 0.9rem;
+    color: #475569;
+}
+/* ✅ Default Styles - Already Included in Your CSS */
+
+/* ✅ Large Screens (Desktops, Laptops) */
+@media screen and (max-width: 1200px) {
+    .home-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+    
+    .home-left, .home-right {
+        width: 100%;
+        height: auto;
+    }
+
+    .medi-info, .activity, .appointments {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 3 */
+    }
+}
+
+/* ✅ Medium Screens (Tablets, Small Laptops) */
+@media screen and (max-width: 992px) {
+    .home-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .home-left {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .img-block {
+        width: 120px;
+        height: 120px;
+    }
+
+    .name {
+        font-size: 1.5rem;
+    }
+
+    .home-right {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .medi-info, .activity, .appointments {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 10px;
+    }
+
+    .card-medi {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .card-medi h1 {
+        font-size: 32px;
+    }
+}
+
+/* ✅ Small Screens (Mobile Phones) */
+@media screen and (max-width: 768px) {
+    .home-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .home-left {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .img-block {
+        width: 100px;
+        height: 100px;
+    }
+
+    .name {
+        font-size: 1.3rem;
+    }
+
+    .home-right {
+        width: 100%;
+        padding: 10px;
+        height: auto;
+    }
+
+    .medi-info, .activity, .appointments {
+        grid-template-columns: repeat(1, 1fr); /* Single column */
+        gap: 8px;
+    }
+
+    .card-medi {
+        min-width: 100%;
+        padding: 10px;
+    }
+
+    .card-medi h1 {
+        font-size: 28px;
+    }
+
+    .detail, .section-title {
+        font-size: 14px;
+    }
+}
+
+/* ✅ Extra Small Screens (Very Small Phones) */
+@media screen and (max-width: 480px) {
+    .home-container {
+        padding: 5px;
+    }
+
+    .home-left, .home-right {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .img-block {
+        width: 80px;
+        height: 80px;
+    }
+
+    .name {
+        font-size: 1.1rem;
+    }
+
+    .card-medi {
+        padding: 8px;
+    }
+
+    .card-medi h1 {
+        font-size: 24px;
+    }
+
+    .detail, .section-title {
+        font-size: 12px;
+    }
 }
