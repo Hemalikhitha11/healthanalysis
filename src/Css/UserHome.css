@@ -348,3 +348,209 @@
         font-size: 12px;
     }
 }
+
+
+/* HEALTH ALERTS CSS */
+
+
+
+
+.health-alerts-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    overflow: hidden;
+    height: 87vh;
+}
+
+.header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    height: 10vh;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header h1 {
+    text-decoration: underline;
+}
+.main-content {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Sidebar for health conditions */
+.sidebar {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    width: 25%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Health conditions list - internal scroll without visible scrollbar */
+.sidebar ul {
+    max-height: 450px; /* Adjust height as needed */
+    overflow-y: auto;
+    padding-right: 5px; /* Prevents content from hiding under scrollbar */
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+.sidebar ul::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.health-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.health-item .icon {
+    font-size: 24px;
+}
+
+/* Center Body Image */
+.body-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+ }
+
+.body-image img {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+/* Doctor Booking */
+.doctors-section {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    width: 25%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.specialist-dropdown {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.doctors-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 400px; /* Adjust the height as needed */
+    overflow-y: auto;
+    padding-right: 5px; /* Prevents hiding content under scrollbar */
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+.doctors-list::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+
+
+.doctor-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.doctor-card img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.doctor-card p {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.doctor-card span {
+    font-size: 12px;
+    color: gray;
+}
+
+/* === 📌 Responsive Design === */
+
+/* Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .health-alerts-container {
+       height: auto;
+    }
+    .body-image{
+        display: none;
+    }
+    .sidebar, .doctors-section {
+        width: 90%;
+    }
+}
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .main-content {
+        grid-template-columns: 1fr 1fr; /* Two columns layout */
+    }
+
+    .body-image {
+        grid-column: span 2; /* Stretch across two columns */
+    }
+
+    .sidebar, .doctors-section {
+        width: 100%;
+    }
+}
+/* === 📌 Mobile-Specific Adjustments === */
+@media (max-width: 480px) {
+    .header {
+        font-size: 20px;
+        padding: 10px 0;
+    }
+
+    .sidebar h2, .doctors-section h2 {
+        font-size: 16px;
+    }
+
+    .health-item {
+        padding: 8px;
+    }
+
+    .doctor-card {
+        padding: 8px;
+    }
+
+    .specialist-dropdown {
+        padding: 8px;
+    }
+}

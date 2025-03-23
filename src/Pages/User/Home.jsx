@@ -63,8 +63,8 @@ const Home = () => {
                             {[
                                 { title: "Blood Pressure", value: "120/80", unit: "mmHg", icon: "❤️", showECG: true },
                                 { title: "Heart Rate", value: "80", unit: "bpm", icon: "🩺", showECG: true },
-                                { title: "Temperature", value: "98.6", unit: "°F", icon: "🌡️", showECG: true },
                                 { title: "Oxygen Level", value: "98", unit: "%", icon: "🫁", showECG: true },
+                                { title: "Temperature", value: "98.6", unit: "°F", icon: "🌡️", showECG: true },
                                 { title: "Blood Sugar", value: "110", unit: "mg/dl", icon: "🩸", showECG: false },
                                 { title: "Cholesterol", value: "180", unit: "mg/dl", icon: "🩸", showECG: false }
                             ].map((item, index) => (
