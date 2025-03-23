@@ -88,6 +88,22 @@
     font-weight: bold;
 }
 
+/* Default styles for nav links */
+.usernav-links li,
+.usernav-links-mobile li {
+    list-style: none;
+    padding: 10px 15px;
+}
+
+/* Active tab styling */
+.usernav-links li.active a,
+.usernav-links-mobile li.active a {
+    color: #38bdf8; /* Light blue for highlighting */
+    font-weight: bold;
+    border-bottom: 3px solid #38bdf8; /* Underline effect */
+}
+
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .usernav-links {
