@@ -607,7 +607,102 @@
     }
 }
 
+/*hospital.css*/
+/* Add to ../../Css/UserHome.css or create a new HealthAlerts.css */
 
+/* Hospital Background Effect */
+.hospital-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hospital-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(227, 242, 253, 0.8),
+        rgba(187, 222, 251, 0.8)
+    );
+    /* Optional: Add subtle hospital pattern */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" opacity="0.1"><path d="M20 10v20m10-10H10" stroke="#2196f3" stroke-width="2"/></svg>');
+    background-size: 40px 40px;
+}
+
+.hospital-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.pulse-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(33, 150, 243, 0.2);
+    animation: hospitalPulse 3s infinite ease-in-out;
+}
+
+.pulse-1 {
+    width: 200px;
+    height: 200px;
+    top: 15%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.pulse-2 {
+    width: 150px;
+    height: 150px;
+    top: 60%;
+    right: 15%;
+    animation-delay: 1s;
+}
+
+.pulse-3 {
+    width: 180px;
+    height: 180px;
+    bottom: 20%;
+    left: 70%;
+    animation-delay: 2s;
+}
+
+@keyframes hospitalPulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Ensure content stays above background */
+.health-alerts-container {
+    position: relative;
+    z-index: 1;
+}
+
+.header,
+.main-content,
+.sidebar,
+.body-image,
+.doctors-section {
+    position: relative;
+    z-index: 2;
+}
 
 /* PROFILE PAGE CSS */
 

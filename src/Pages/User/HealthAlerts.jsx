@@ -73,6 +73,16 @@ const HealthAlerts = () => {
             exit="exit"
             className="health-alerts-container main"
         >
+            {/* Hospital Background Effect */}
+            <div className="hospital-background">
+                <div className="hospital-overlay"></div>
+                <div className="hospital-elements">
+                    <div className="pulse-effect pulse-1"></div>
+                    <div className="pulse-effect pulse-2"></div>
+                    <div className="pulse-effect pulse-3"></div>
+                </div>
+            </div>
+
             {/* Header */}
             <header className="header">
                 <motion.h1 
