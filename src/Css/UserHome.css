@@ -1,3 +1,7 @@
+::-webkit-scrollbar{
+    display: none;
+}
+
 .main {
     position: relative;
     top: 75px;
@@ -5,7 +9,7 @@
 
 .home-container {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     background: white;
     padding: 20px;
     border-radius: 10px;
@@ -26,10 +30,12 @@
     border-radius: 20px;
     height: 80vh;
 }
-.img-block{
+
+.img-block {
     width: 150px;
     height: 150px;
 }
+
 .profile-image {
     width: 100%;
     height: 100%;
@@ -68,6 +74,7 @@
     color: #0f172a;
     text-decoration: underline;
 }
+
 .home-right {
     display: flex;
     flex-direction: column;
@@ -92,34 +99,41 @@
 }
 
 .home-right {
-    scrollbar-width: none;  /* For Firefox */
-    -ms-overflow-style: none;  /* For Internet Explorer */
+    scrollbar-width: none;
+    /* For Firefox */
+    -ms-overflow-style: none;
+    /* For Internet Explorer */
 }
 
 /* Medical Info Section */
 .medi-info {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Two columns */
+    grid-template-columns: repeat(3, 1fr);
+    /* Two columns */
     gap: 15px;
     width: 100%;
     margin-bottom: 20px;
 }
+
 .card-medi {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background: linear-gradient(145deg, #1E293B, #334155); /* Dark Blue-Gray Gradient */
+    background: linear-gradient(145deg, #1E293B, #334155);
+    /* Dark Blue-Gray Gradient */
     color: white;
     border-radius: 12px;
     min-width: 200px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    /* Soft shadow for depth */
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .card-medi:hover {
-    transform: scale(1.05); /* Slight zoom effect on hover */
+    transform: scale(1.05);
+    /* Slight zoom effect on hover */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -129,12 +143,14 @@
     width: 100%;
     font-size: 16px;
     font-weight: bold;
-    color: #93C5FD; /* Light Blue for better contrast */
+    color: #93C5FD;
+    /* Light Blue for better contrast */
 }
 
 .icon {
     font-size: 24px;
-    color: #FACC15; /* Golden Yellow for contrast */
+    color: #FACC15;
+    /* Golden Yellow for contrast */
 }
 
 .card-medi h1 {
@@ -146,15 +162,18 @@
 
 .unit {
     font-size: 20px;
-    color: #CBD5E1; /* Light Gray-Blue */
+    color: #CBD5E1;
+    /* Light Gray-Blue */
 }
 
 
 /* Recent Activity Section */
 .activity {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
-    gap: 15px; /* Space between items */
+    grid-template-columns: repeat(3, 1fr);
+    /* Three equal columns */
+    gap: 15px;
+    /* Space between items */
     width: 100%;
     margin-bottom: 20px;
 }
@@ -181,8 +200,10 @@
 /* Appointments Section */
 .appointments {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
-    gap: 15px; /* Space between items */
+    grid-template-columns: repeat(3, 1fr);
+    /* Three equal columns */
+    gap: 15px;
+    /* Space between items */
     width: 100%;
     margin-bottom: 20px;
 }
@@ -201,10 +222,12 @@
     color: #2563eb;
 }
 
-.date, .time {
+.date,
+.time {
     font-size: 0.9rem;
     color: #475569;
 }
+
 /* ✅ Default Styles - Already Included in Your CSS */
 
 /* ✅ Large Screens (Desktops, Laptops) */
@@ -214,14 +237,18 @@
         align-items: center;
         padding: 15px;
     }
-    
-    .home-left, .home-right {
+
+    .home-left,
+    .home-right {
         width: 100%;
         height: auto;
     }
 
-    .medi-info, .activity, .appointments {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 3 */
+    .medi-info,
+    .activity,
+    .appointments {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns instead of 3 */
     }
 }
 
@@ -253,8 +280,11 @@
         padding: 15px;
     }
 
-    .medi-info, .activity, .appointments {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    .medi-info,
+    .activity,
+    .appointments {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns */
         gap: 10px;
     }
 
@@ -297,8 +327,11 @@
         height: auto;
     }
 
-    .medi-info, .activity, .appointments {
-        grid-template-columns: repeat(1, 1fr); /* Single column */
+    .medi-info,
+    .activity,
+    .appointments {
+        grid-template-columns: repeat(1, 1fr);
+        /* Single column */
         gap: 8px;
     }
 
@@ -311,7 +344,8 @@
         font-size: 28px;
     }
 
-    .detail, .section-title {
+    .detail,
+    .section-title {
         font-size: 14px;
     }
 }
@@ -322,7 +356,8 @@
         padding: 5px;
     }
 
-    .home-left, .home-right {
+    .home-left,
+    .home-right {
         width: 100%;
         padding: 5px;
     }
@@ -344,7 +379,8 @@
         font-size: 24px;
     }
 
-    .detail, .section-title {
+    .detail,
+    .section-title {
         font-size: 12px;
     }
 }
@@ -373,9 +409,11 @@
     justify-content: center;
     align-items: center;
 }
+
 .header h1 {
     text-decoration: underline;
 }
+
 .main-content {
     display: flex;
     gap: 20px;
@@ -395,10 +433,13 @@
 
 /* Health conditions list - internal scroll without visible scrollbar */
 .sidebar ul {
-    max-height: 450px; /* Adjust height as needed */
+    max-height: 450px;
+    /* Adjust height as needed */
     overflow-y: auto;
-    padding-right: 5px; /* Prevents content from hiding under scrollbar */
-    scrollbar-width: none; /* Hides scrollbar in Firefox */
+    padding-right: 5px;
+    /* Prevents content from hiding under scrollbar */
+    scrollbar-width: none;
+    /* Hides scrollbar in Firefox */
 }
 
 /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
@@ -431,9 +472,9 @@
     justify-content: center;
     align-items: center;
     height: 75vh;
- }
+}
 
-.body-image img {
+.body-image   {
     max-width: 100%;
     height: 100%;
     border-radius: 20px;
@@ -459,10 +500,13 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-height: 400px; /* Adjust the height as needed */
+    max-height: 400px;
+    /* Adjust the height as needed */
     overflow-y: auto;
-    padding-right: 5px; /* Prevents hiding content under scrollbar */
-    scrollbar-width: none; /* Hides scrollbar in Firefox */
+    padding-right: 5px;
+    /* Prevents hiding content under scrollbar */
+    scrollbar-width: none;
+    /* Hides scrollbar in Firefox */
 }
 
 /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
@@ -507,12 +551,15 @@
     }
 
     .health-alerts-container {
-       height: auto;
+        height: auto;
     }
-    .body-image{
+
+    .body-image {
         display: none;
     }
-    .sidebar, .doctors-section {
+
+    .sidebar,
+    .doctors-section {
         width: 90%;
     }
 }
@@ -520,17 +567,21 @@
 /* Tablets (max-width: 1024px) */
 @media (max-width: 1024px) {
     .main-content {
-        grid-template-columns: 1fr 1fr; /* Two columns layout */
+        grid-template-columns: 1fr 1fr;
+        /* Two columns layout */
     }
 
     .body-image {
-        grid-column: span 2; /* Stretch across two columns */
+        grid-column: span 2;
+        /* Stretch across two columns */
     }
 
-    .sidebar, .doctors-section {
+    .sidebar,
+    .doctors-section {
         width: 100%;
     }
 }
+
 /* === 📌 Mobile-Specific Adjustments === */
 @media (max-width: 480px) {
     .header {
@@ -538,7 +589,8 @@
         padding: 10px 0;
     }
 
-    .sidebar h2, .doctors-section h2 {
+    .sidebar h2,
+    .doctors-section h2 {
         font-size: 16px;
     }
 
@@ -552,5 +604,163 @@
 
     .specialist-dropdown {
         padding: 8px;
+    }
+}
+
+
+
+/* PROFILE PAGE CSS */
+
+/* General Styles */
+.health-profile-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Profile Picture Upload */
+.profile-pic {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007bff;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.profile-img:hover {
+    opacity: 0.8;
+}
+
+.upload-text {
+    font-size: 14px;
+    color: #666;
+}
+
+.error-text {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Form Container */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Form Fields */
+.form-group {
+    width: 100%;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input, 
+.form-group select,
+.form-group textarea {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    resize: none;
+}
+.form-group select{
+    width: 94%;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Gender Dropdown */
+.form-group select {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* BMI Display */
+.bmi-display {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+    margin-top: 10px;
+}
+
+/* Buttons */
+.button-group {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.save-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.save-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .health-profile-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 14px;
+    }
+
+    .save-btn {
+        font-size: 14px;
     }
 }
