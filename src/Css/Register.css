@@ -1,0 +1,53 @@
+.register-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+   }
+   
+   .register-container h1 {
+    color: #2196f3;
+    margin-bottom: 20px;
+   }
+   
+   .register-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+   }
+   
+   .register-container input {
+    padding: 10px;
+    border: 1px solid #90caf9;
+    border-radius: 5px;
+   }
+   
+   .register-container button {
+    padding: 10px;
+    background: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+   }
+   
+   .register-container p {
+    margin-top: 15px;
+    color: #333;
+   }
+   
+   .register-container a {
+    color: #2196f3;
+    text-decoration: none;
+   }
+   
+   .error {
+    color: #ef4444;
+    margin-top: 10px;
+   }
