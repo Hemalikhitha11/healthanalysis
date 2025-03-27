@@ -1,7 +1,7 @@
 // src/components/Logout.js
 import React, { useState, useEffect } from 'react';
 import '../../Css/UserHome.css'; // Assuming this is your base styling
-import './Logout.css'; // New CSS file for logout-specific styles
+import '../../Css/Logout.css'; // New CSS file for logout-specific styles
 import { useNavigate } from 'react-router-dom'; // For redirect after logout
 import { motion } from "framer-motion";
 

@@ -6,12 +6,13 @@ import Alerts from "./Pages/User/HealthAlerts";
 import Reports from "./Pages/User/Reports";
 import Profile from "./Pages/User/Profile";
 import UserNavbar from "./Components/UserNavbar";
+import Logout from "./Pages/User/Logout";
 
-const Logout = () => {
-    return (
-        <h1>Logout</h1>
-    );
-}
+// const Logout = () => {
+//     return (
+//         <h1>Logout</h1>
+//     );
+// }
 
 const AnimatedRoutes = () => {
     const location = useLocation(); // Get the current location for animations
