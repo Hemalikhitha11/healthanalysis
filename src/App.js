@@ -1,42 +1,28 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
-import Dashboard from "./Pages/User/Home";
-import Alerts from "./Pages/User/HealthAlerts";
-import Reports from "./Pages/User/Reports";
-import Profile from "./Pages/User/Profile";
-import UserNavbar from "./Components/UserNavbar";
-import Logout from "./Pages/User/Logout";
-
-// const Logout = () => {
-//     return (
-//         <h1>Logout</h1>
-//     );
-// }
-
-const AnimatedRoutes = () => {
-    const location = useLocation(); // Get the current location for animations
-
-    return (
-        <AnimatePresence mode="wait"> 
-            <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<Dashboard />} />
-                <Route path="/alerts" element={<Alerts />} />
-                <Route path="/reports" element={<Reports />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/logout" element={<Logout />} />
-            </Routes>
-        </AnimatePresence>
-    );
-};
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Dashboard from './components/Dashboard';
+import UserHome from './components/UserHome';
+import Reports from './components/Reports';
+import Logout from './components/Logout';
+import Login from './components/Login';
+import Register from './components/Register';
+import UserNavbar from './components/UserNavbar'; // Updated import
 
 function App() {
-    return (
-        <Router>
-            <UserNavbar />
-            <AnimatedRoutes />
-        </Router>
-    );
+  return (
+    <BrowserRouter>
+      <UserNavbar /> {/* Updated component */}
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/alerts" element={<UserHome />} /> {/* Updated path */}
+        <Route path="/reports" element={<Reports />} />
+        <Route path="/logout" element={<Logout />} />
+        <Route path="/profile" element={<div>Profile Page (To be implemented)</div>} /> {/* Placeholder */}
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

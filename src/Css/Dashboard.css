@@ -1,0 +1,54 @@
+.dashboard-container {
+    min-height: 100vh;
+    padding: 40px;
+    position: relative;
+   }
+   
+   .hospital-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+   }
+   
+   .hospital-overlay {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(240, 248, 255, 0.9), rgba(173, 216, 230, 0.7));
+   }
+   
+   .dashboard-title {
+    text-align: center;
+    color: #2196f3;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+   }
+   
+   .insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+   }
+   
+   .insight-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+   }
+   
+   .insight-card h3 {
+    color: #1976d2;
+    margin-bottom: 10px;
+   }
+   
+   .insight-card p {
+    color: #333;
+    font-size: 1.2rem;
+   }
