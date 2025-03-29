@@ -16,7 +16,7 @@ const AnimatedRoutes = () => {
     return (
         <AnimatePresence mode="wait"> 
             <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<Dashboard />} />
+                <Route path="/home" element={<Dashboard />} />
                 <Route path="/alerts" element={<Alerts />} />
                 <Route path="/reports" element={<Reports />} />
                 <Route path="/profile" element={<Profile />} />
@@ -31,7 +31,7 @@ function App() {
     <Router>
       <UserNavbar /> {/* Navbar remains outside to persist across pages */}
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/*" element={<AnimatedRoutes />} /> {/* Handles all other routes */}
       </Routes>

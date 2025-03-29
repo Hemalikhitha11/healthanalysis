@@ -19,8 +19,8 @@ const UserNavbar = () => {
 
             <div className="usernav-container">
                 <ul className="usernav-links">
-                    <li className={location.pathname === "/" ? "active" : ""}>
-                        <Link to="/">Dashboard</Link>
+                    <li className={location.pathname === "/home" ? "active" : ""}>
+                        <Link to="/home">Dashboard</Link>
                     </li>
                     <li className={location.pathname === "/alerts" ? "active" : ""}>
                         <Link to="/alerts">Health Alerts</Link>

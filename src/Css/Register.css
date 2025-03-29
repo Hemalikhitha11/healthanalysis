@@ -1,53 +1,359 @@
 .register-container {
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-   }
-   
-   .register-container h1 {
-    color: #2196f3;
-    margin-bottom: 20px;
-   }
-   
-   .register-container form {
+    background: linear-gradient(135deg, #e0f7fa, #b2ebf2, #80deea);
+    font-family: 'Roboto', Arial, sans-serif;
+    padding: 20px;
+}
+
+.register-card {
+    width: 100%;
+    max-width: 800px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.register-header {
+    padding: 30px 30px 15px;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.register-header h1 {
+    color: #00838f;
+    margin: 0 0 10px;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.register-subtitle {
+    color: #546e7a;
+    margin: 0 0 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+form {
+    padding: 30px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-   }
-   
-   .register-container input {
-    padding: 10px;
-    border: 1px solid #90caf9;
-    border-radius: 5px;
-   }
-   
-   .register-container button {
-    padding: 10px;
-    background: #2196f3;
+    gap: 25px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+label {
+    color: #00838f;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+input, select, textarea {
+    padding: 15px;
+    border: 2px solid #e0f7fa;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s;
+    background-color: #f7fdfe;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+    min-height: 80px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #4dd0e1;
+    box-shadow: 0 0 0 3px rgba(77, 208, 225, 0.2);
+}
+
+input::placeholder, textarea::placeholder {
+    color: #b0bec5;
+}
+
+/* BMI Result styles */
+.bmi-result {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 10px;
+    border: 1px solid #e0e0e0;
+}
+
+.bmi-result h3 {
+    color: #00838f;
+    margin: 0 0 15px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.bmi-value {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.bmi-category {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.bmi-category.underweight {
+    background-color: #90caf9;
+    color: #0d47a1;
+}
+
+.bmi-category.normal-weight {
+    background-color: #a5d6a7;
+    color: #1b5e20;
+}
+
+.bmi-category.overweight {
+    background-color: #ffe082;
+    color: #ff6f00;
+}
+
+.bmi-category.obese {
+    background-color: #ef9a9a;
+    color: #b71c1c;
+}
+
+.bmi-scale {
+    display: flex;
+    height: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.scale-item {
+    flex: 1;
+    height: 100%;
+    color: transparent;
+    font-size: 0;
+    transition: all 0.3s;
+}
+
+.scale-item.underweight {
+    background-color: #90caf9;
+}
+
+.scale-item.normal-weight {
+    background-color: #a5d6a7;
+}
+
+.scale-item.overweight {
+    background-color: #ffe082;
+}
+
+.scale-item.obese {
+    background-color: #ef9a9a;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    background: #00acc1;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-   }
-   
-   .register-container p {
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s;
     margin-top: 15px;
-    color: #333;
-   }
-   
-   .register-container a {
-    color: #2196f3;
+    width: 100%;
+}
+
+button:hover {
+    background: #00838f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 131, 143, 0.2);
+}
+
+button:disabled {
+    background: #b0bec5;
+    transform: none;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.error {
+    color: #f44336;
+    margin: 10px 0 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.login-link {
+    text-align: center;
+    color: #607d8b;
+    margin: 0;
+    padding: 15px 30px;
+    font-size: 14px;
+    border-top: 1px solid #f0f0f0;
+}
+
+a {
+    color: #00acc1;
     text-decoration: none;
-   }
-   
-   .error {
-    color: #ef4444;
-    margin-top: 10px;
-   }
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #00838f;
+    text-decoration: underline;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .register-card {
+        max-width: 500px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .register-header {
+        padding: 20px 20px 10px;
+    }
+    
+    .register-header h1 {
+        font-size: 24px;
+    }
+    
+    .register-subtitle {
+        font-size: 14px;
+    }
+    
+    form {
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    input, select, textarea {
+        padding: 12px;
+        font-size: 15px;
+    }
+    
+    .bmi-value {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .bmi-result {
+        padding: 15px;
+    }
+    
+    .bmi-result h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .register-container {
+        padding: 10px;
+    }
+    
+    .register-header h1 {
+        font-size: 22px;
+    }
+    
+    form {
+        padding: 15px;
+        gap: 12px;
+    }
+    
+    .input-group {
+        gap: 5px;
+    }
+    
+    label {
+        font-size: 13px;
+    }
+    
+    input, select, textarea {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    button {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+/* For high-resolution displays */
+@media screen and (min-width: 1200px) {
+    .register-card {
+        max-width: 900px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .form-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* For landscape orientation on mobile */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .register-container {
+        padding: 10px;
+        align-items: flex-start;
+    }
+    
+    .register-card {
+        margin: 10px 0;
+    }
+    
+    .register-header {
+        padding: 15px 20px 10px;
+    }
+    
+    .register-header h1 {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+    
+    form {
+        padding: 15px;
+        gap: 10px;
+    }
+}
