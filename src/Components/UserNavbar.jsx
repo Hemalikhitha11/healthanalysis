@@ -1,14 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import "../Css/UserNavbar.css";
 
 const UserNavbar = () => {
     const [isMobile, setIsMobile] = useState(false);
-    const location = useLocation();  // Get current URL path
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const location = useLocation();
 
     const toggleMobileMenu = () => {
         setIsMobile(!isMobile);
+    };
+
+    useEffect(() => {
+        // Update login state from localStorage
+        const userData = localStorage.getItem("userData");
+        setIsLoggedIn(!!userData);
+    }, [location]); // Update when location changes
+
+    // Renders either Login or Logout button based on path and auth
+    const renderAuthLink = () => {
+        const currentPath = location.pathname;
+
+        if (currentPath === "/login" || currentPath === "/register") {
+            return (
+                <li className={currentPath === "/login" ? "active" : ""}>
+                    <Link to="/login">Login</Link>
+                </li>
+            );
+        }
+
+        if (isLoggedIn) {
+            return (
+                <li className={currentPath === "/logout" ? "active" : ""}>
+                    <Link to="/logout">Logout</Link>
+                </li>
+            );
+        } else {
+            return (
+                <li className={currentPath === "/login" ? "active" : ""}>
+                    <Link to="/login">Login</Link>
+                </li>
+            );
+        }
     };
 
     return (
@@ -31,9 +65,7 @@ const UserNavbar = () => {
                     <li className={location.pathname === "/profile" ? "active" : ""}>
                         <Link to="/profile">Profile</Link>
                     </li>
-                    <li className={location.pathname === "/logout" ? "active" : ""}>
-                        <Link to="/logout">Logout</Link>
-                    </li>
+                    {renderAuthLink()}
                 </ul>
 
                 <button className="usermenu-icon" onClick={toggleMobileMenu}>
@@ -44,15 +76,15 @@ const UserNavbar = () => {
             {/* Animated Mobile Menu */}
             <AnimatePresence>
                 {isMobile && (
-                    <motion.ul 
+                    <motion.ul
                         className="usernav-links-mobile"
                         initial={{ x: "100%" }}
                         animate={{ x: 0 }}
                         exit={{ x: "100%" }}
-                        transition={{ duration: 0.5, ease: "easeIn" }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
                     >
-                        <li className={location.pathname === "/" ? "active" : ""}>
-                            <Link to="/" onClick={toggleMobileMenu}>Dashboard</Link>
+                        <li className={location.pathname === "/home" ? "active" : ""}>
+                            <Link to="/home" onClick={toggleMobileMenu}>Dashboard</Link>
                         </li>
                         <li className={location.pathname === "/alerts" ? "active" : ""}>
                             <Link to="/alerts" onClick={toggleMobileMenu}>Health Alerts</Link>
@@ -63,9 +95,19 @@ const UserNavbar = () => {
                         <li className={location.pathname === "/profile" ? "active" : ""}>
                             <Link to="/profile" onClick={toggleMobileMenu}>Profile</Link>
                         </li>
-                        <li className={location.pathname === "/logout" ? "active" : ""}>
-                            <Link to="/logout" onClick={toggleMobileMenu}>Logout</Link>
-                        </li>
+                        {(location.pathname === "/login" || location.pathname === "/register") ? (
+                            <li className={location.pathname === "/login" ? "active" : ""}>
+                                <Link to="/login" onClick={toggleMobileMenu}>Login</Link>
+                            </li>
+                        ) : isLoggedIn ? (
+                            <li className={location.pathname === "/logout" ? "active" : ""}>
+                                <Link to="/logout" onClick={toggleMobileMenu}>Logout</Link>
+                            </li>
+                        ) : (
+                            <li className={location.pathname === "/login" ? "active" : ""}>
+                                <Link to="/login" onClick={toggleMobileMenu}>Login</Link>
+                            </li>
+                        )}
                     </motion.ul>
                 )}
             </AnimatePresence>
