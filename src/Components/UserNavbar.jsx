@@ -104,8 +104,8 @@ const UserNavbar = () => {
                                 <Link to="/logout" onClick={toggleMobileMenu}>Logout</Link>
                             </li>
                         ) : (
-                            <li className={location.pathname === "/login" ? "active" : ""}>
-                                <Link to="/login" onClick={toggleMobileMenu}>Login</Link>
+                            <li className={location.pathname === "/" ? "active" : ""}>
+                                <Link to="/" onClick={toggleMobileMenu}>Login</Link>
                             </li>
                         )}
                     </motion.ul>
