@@ -67,7 +67,7 @@ label {
     font-size: 14px;
 }
 
-.reg-input , select, textarea {
+.input-group input, select, textarea {
     padding: 15px;
     border: 2px solid #e0f7fa;
     border-radius: 10px;
@@ -83,18 +83,18 @@ textarea {
     min-height: 80px;
 }
 
-.reg-input :focus, select:focus, textarea:focus {
+.input-group input :focus, select:focus, textarea:focus {
     outline: none;
     border-color: #4dd0e1;
     box-shadow: 0 0 0 3px rgba(77, 208, 225, 0.2);
 }
 
-.reg-input .input-error, select.input-error, textarea.input-error {
+.input-group input .input-error, select.input-error, textarea.input-error {
     border-color: #f44336;
     background-color: #fff8f8;
 }
 
-.reg-input .input-error:focus, select.input-error:focus, textarea.input-error:focus {
+.input-group input .input-error:focus, select.input-error:focus, textarea.input-error:focus {
     box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.2);
 }
 
@@ -116,7 +116,7 @@ textarea {
     border: 1px solid #ffcdd2;
 }
 
-.reg-input ::placeholder, textarea::placeholder {
+.input-group input ::placeholder, textarea::placeholder {
     color: #b0bec5;
 }
 
@@ -333,7 +333,7 @@ a:hover {
         font-size: 13px;
     }
     
-    .reg-input , select, textarea {
+    .input-group input , select, textarea {
         padding: 10px;
         font-size: 14px;
     }

@@ -173,6 +173,7 @@ function Register() {
 
             login(patientId);
             navigate('/home');
+            console.log('Registration successful:', { ...formData, patientId, bmi, bmiCategory });
         } catch (err) {
             setFormError('Something went wrong.');
         } finally {
@@ -193,7 +194,7 @@ function Register() {
                         {/* Name */}
                         <div className="input-group">
                             <label htmlFor="name">Full Name*</label>
-                            <input classname='reg-input' id="name" name="name" type="text" placeholder="John Doe"
+                            <input  id="name" name="name" type="text" placeholder="John Doe"
                                 value={formData.name} onChange={handleChange} onBlur={handleBlur}
                                 className={errors.name && touchedFields.name ? 'input-error' : ''}
                             />
@@ -205,7 +206,7 @@ function Register() {
                         {/* Age */}
                         <div className="input-group">
                             <label htmlFor="age">Age*</label>
-                            <input classname='reg-input' id="age" name="age" type="number.age" placeholder="30"
+                            <input  id="age" name="age" type="number.age" placeholder="30"
                                 value={formData.age} onChange={handleChange} onBlur={handleBlur}
                                 className={errors.age && touchedFields.age ? 'input-error' : ''}
                             />

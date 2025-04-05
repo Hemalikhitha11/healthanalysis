@@ -19,6 +19,11 @@ const AnimatedRoutes = () => {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
+        {/* Public routes */}
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        {/* Private routes */}
         <Route path="/home" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
         <Route path="/alerts" element={<PrivateRoute><Alerts /></PrivateRoute>} />
         <Route path="/reports" element={<PrivateRoute><Reports /></PrivateRoute>} />
@@ -34,11 +39,7 @@ function App() {
     <AuthProvider>
       <Router>
         <UserNavbar />
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/*" element={<AnimatedRoutes />} />
-        </Routes>
+        <AnimatedRoutes />
       </Router>
     </AuthProvider>
   );
