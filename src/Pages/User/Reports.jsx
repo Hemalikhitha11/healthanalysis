@@ -99,6 +99,7 @@ function Reports() {
                 type="checkbox"
                 checked={consentGiven}
                 onChange={(e) => setConsentGiven(e.target.checked)}
+                className='consent-checkbox'
               />
               I consent to processing my health data
             </label>

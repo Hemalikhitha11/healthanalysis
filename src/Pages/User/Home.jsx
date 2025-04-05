@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState,useEffect} from "react";
 import { motion } from "framer-motion";
 import profile from "../../Images/profile.jpeg";
 import ECG from "../../Components/ECG";
@@ -11,6 +11,23 @@ const pageVariants = {
 };
 
 const Home = () => {
+    const [userData, setUserData] = useState();
+    const storedData = JSON.parse(localStorage.getItem("userData")) || {};
+
+    useEffect(() => {
+        const updateUserData = () => {
+            const data = JSON.parse(localStorage.getItem("userData")) || {};
+            setUserData(data);
+        };
+
+        window.addEventListener("userDataUpdated", updateUserData);
+        updateUserData();
+
+        return () => {
+            window.removeEventListener("userDataUpdated", updateUserData);
+        };
+    }, []);
+
     return (
         <motion.div
             variants={pageVariants}
@@ -28,22 +45,25 @@ const Home = () => {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
                         <div className="img-block">
-                            <img src={profile} alt="Profile" className="profile-image" />
+                            <img src={storedData.profileImage} alt="Profile" className="profile-image" />
                         </div>
-                        <h1 className="name">KAKASHI HATAKE</h1>
+                        <h1 className="name"> {storedData.name || "N/A"} </h1>
 
                         <div className="personal-details">
                             <h3 className="section-title">Personal Information</h3>
-                            <p className="detail"><strong>Age:</strong> 20</p>
-                            <p className="detail"><strong>Patient ID:</strong> KH202403</p>
-                            <p className="detail"><strong>Weight:</strong> 60kg</p>
-                            <p className="detail"><strong>Phone:</strong> +91 98765 43210</p>
-                            <p className="detail"><strong>Address:</strong> Hidden Leaf Village, Konoha</p>
+                            <p className="detail"><strong>Age:</strong> {storedData.age || "N/A"}</p>
+                            <p className="detail"><strong>PatientId:</strong> {storedData.patientId || "N/A"}</p>
+                            <p className="detail"><strong>Gender:</strong> {storedData.gender || "N/A"}</p>
+                            <p className="detail"><strong>Phone Number:</strong> {storedData.phone || "N/A"}</p>
+                            <p className="detail"><strong>Weight:</strong> {storedData.weight || "N/A"} kg</p>
+                            <p className="detail"><strong>Height:</strong> {storedData.height || "N/A"} cm</p>
+                            <p className="detail"><strong>Address:</strong> {storedData.address || "N/A"}</p>
                         </div>
 
                         <div className="medical-info">
                             <h3 className="section-title">Medical Information</h3>
-                            <p className="detail"><strong>Blood Group:</strong> O+</p>
+                            <p className="detail"><strong>Blood Group:</strong> {storedData.bloodGroup || "N/A"} </p>
+                            <p className="detail"><strong>BMI:</strong> {storedData.bmi || "N/A"} bmi</p>
                             <p className="detail"><strong>Allergies:</strong> None</p>
                             <p className="detail"><strong>Chronic Conditions:</strong> Hypertension</p>
                             <p className="detail"><strong>Medications:</strong> Prescribed Blood Pressure Medication</p>

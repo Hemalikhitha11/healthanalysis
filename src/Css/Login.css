@@ -57,7 +57,7 @@ label {
     font-size: 14px;
 }
 
-input {
+.input-field {
     padding: 15px;
     border: 2px solid #e0f7fa;
     border-radius: 10px;
@@ -68,17 +68,17 @@ input {
     box-sizing: border-box;
 }
 
-input:focus {
+.input-field:focus {
     outline: none;
     border-color: #4dd0e1;
     box-shadow: 0 0 0 3px rgba(77, 208, 225, 0.2);
 }
 
-input::placeholder {
+.input-field::placeholder {
     color: #b0bec5;
 }
 
-button {
+.login-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,7 +96,7 @@ button {
     width: 100%;
 }
 
-button:hover {
+.login-button:hover {
     background: #00838f;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 131, 143, 0.2);
@@ -107,7 +107,7 @@ button:hover {
     transition: transform 0.3s;
 }
 
-button:hover .arrow-icon {
+.login-button:hover .arrow-icon {
     transform: translateX(5px);
 }
 
@@ -166,12 +166,12 @@ a:hover {
         gap: 20px;
     }
     
-    input {
+    .input-field {
         padding: 12px;
         font-size: 15px;
     }
     
-    button {
+    .login-button {
         padding: 12px;
         font-size: 15px;
     }
@@ -197,7 +197,7 @@ a:hover {
         gap: 15px;
     }
     
-    button {
+    .login-button {
         padding: 10px;
     }
 }

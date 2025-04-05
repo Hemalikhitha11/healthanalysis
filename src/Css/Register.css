@@ -1,5 +1,4 @@
 .register-container {
-    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,7 +67,7 @@ label {
     font-size: 14px;
 }
 
-input, select, textarea {
+.reg-input , select, textarea {
     padding: 15px;
     border: 2px solid #e0f7fa;
     border-radius: 10px;
@@ -84,18 +83,18 @@ textarea {
     min-height: 80px;
 }
 
-input:focus, select:focus, textarea:focus {
+.reg-input :focus, select:focus, textarea:focus {
     outline: none;
     border-color: #4dd0e1;
     box-shadow: 0 0 0 3px rgba(77, 208, 225, 0.2);
 }
 
-input.input-error, select.input-error, textarea.input-error {
+.reg-input .input-error, select.input-error, textarea.input-error {
     border-color: #f44336;
     background-color: #fff8f8;
 }
 
-input.input-error:focus, select.input-error:focus, textarea.input-error:focus {
+.reg-input .input-error:focus, select.input-error:focus, textarea.input-error:focus {
     box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.2);
 }
 
@@ -117,7 +116,7 @@ input.input-error:focus, select.input-error:focus, textarea.input-error:focus {
     border: 1px solid #ffcdd2;
 }
 
-input::placeholder, textarea::placeholder {
+.reg-input ::placeholder, textarea::placeholder {
     color: #b0bec5;
 }
 
@@ -205,7 +204,7 @@ input::placeholder, textarea::placeholder {
     background-color: #ef9a9a;
 }
 
-button {
+.register-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -223,13 +222,13 @@ button {
     width: 100%;
 }
 
-button:hover {
+.register-button:hover {
     background: #00838f;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 131, 143, 0.2);
 }
 
-button:disabled {
+.register-button:disabled {
     background: #b0bec5;
     transform: none;
     cursor: not-allowed;
@@ -287,7 +286,7 @@ a:hover {
         gap: 15px;
     }
     
-    input, select, textarea {
+    .reg-input , select, textarea {
         padding: 12px;
         font-size: 15px;
     }
@@ -334,12 +333,12 @@ a:hover {
         font-size: 13px;
     }
     
-    input, select, textarea {
+    .reg-input , select, textarea {
         padding: 10px;
         font-size: 14px;
     }
     
-    button {
+    .register-button {
         padding: 12px;
         font-size: 14px;
     }

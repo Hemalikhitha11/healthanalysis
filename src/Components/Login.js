@@ -9,50 +9,40 @@ function Login() {
     const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
     const navigate = useNavigate();
 
-    // Track viewport width for responsive adjustments
+    // Track viewport width
     useEffect(() => {
         const handleResize = () => {
             setViewportWidth(window.innerWidth);
         };
-
         window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const handleLogin = async (e) => {
+    const handleLogin = (e) => {
         e.preventDefault();
-        
+
         if (!patientId.trim()) {
             setError('Please enter your patient ID');
             return;
         }
-        
+
         setLoading(true);
         setError('');
-        
-        try {
-            const res = await fetch('http://localhost:5000/api/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                credentials: 'include',
-                body: JSON.stringify({ patientId })
-            });
+
+        // Simulate login
+        setTimeout(() => {
+            const storedId = localStorage.getItem('patientId');
+            if (storedId && storedId === patientId.trim()) {
+                console.log("✅ Patient ID matched, navigating to home...");
+                localStorage.setItem('userId', patientId.trim()); // Store user ID in local storage
+                // navigate('/home'); // <-- check if this logs
+                window.location.href = '/home'; // redirect to home page
             
-            const data = await res.json();
-            
-            if (res.ok) {
-                localStorage.setItem('userId', data.userId);
-                navigate('/');
             } else {
-                setError(data.message || 'Login failed. Please try again.');
+                setError('Invalid Patient ID. Please try again or register.');
             }
-        } catch (err) {
-            setError('Connection error. Please check your internet connection and try again.');
-        } finally {
             setLoading(false);
-        }
+        }, 800); // simulate network delay
     };
 
     return (
@@ -61,8 +51,8 @@ function Login() {
                 <div className="login-header">
                     <h1>Patient Portal</h1>
                     <p className="login-subtitle">
-                        {viewportWidth < 380 
-                            ? 'Enter your ID to continue' 
+                        {viewportWidth < 380
+                            ? 'Enter your ID to continue'
                             : 'Enter your patient ID to access your health information'}
                     </p>
                 </div>
@@ -72,15 +62,15 @@ function Login() {
                         <input
                             id="patientId"
                             type="text"
-                            placeholder={viewportWidth < 380 ? "P-1234567" : "Enter your patient ID (e.g., P-1234567)"}
+                            placeholder={viewportWidth < 380 ? "SIM-123456" : "Enter your patient ID (e.g., SIM-123456)"}
                             value={patientId}
                             onChange={(e) => setPatientId(e.target.value)}
                             autoComplete="off"
-                            aria-required="true"
                             disabled={loading}
+                            className='input-field'
                         />
                     </div>
-                    <button type="submit" disabled={loading}>
+                    <button type="submit" disabled={loading} className='login-button'>
                         <span>{loading ? "Accessing..." : "Access Portal"}</span>
                         {!loading && <i className="arrow-icon">→</i>}
                     </button>
