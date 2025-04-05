@@ -1,5 +1,5 @@
 .register-container {
-    min-height: 100vh;
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,7 +16,7 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     position: relative;
-}
+    }
 
 .register-header {
     padding: 30px 30px 15px;
@@ -55,6 +55,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    position: relative;
 }
 
 .full-width {
@@ -87,6 +88,33 @@ input:focus, select:focus, textarea:focus {
     outline: none;
     border-color: #4dd0e1;
     box-shadow: 0 0 0 3px rgba(77, 208, 225, 0.2);
+}
+
+input.input-error, select.input-error, textarea.input-error {
+    border-color: #f44336;
+    background-color: #fff8f8;
+}
+
+input.input-error:focus, select.input-error:focus, textarea.input-error:focus {
+    box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.2);
+}
+
+.field-error {
+    color: #f44336;
+    font-size: 12px;
+    margin: 2px 0 0;
+    font-weight: 500;
+}
+
+.form-error {
+    color: #f44336;
+    background-color: #ffebee;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    margin: 10px 0 5px;
+    border: 1px solid #ffcdd2;
 }
 
 input::placeholder, textarea::placeholder {
@@ -208,13 +236,6 @@ button:disabled {
     box-shadow: none;
 }
 
-.error {
-    color: #f44336;
-    margin: 10px 0 0;
-    font-size: 14px;
-    text-align: center;
-}
-
 .login-link {
     text-align: center;
     color: #607d8b;
@@ -269,6 +290,10 @@ a:hover {
     input, select, textarea {
         padding: 12px;
         font-size: 15px;
+    }
+    
+    .field-error {
+        font-size: 11px;
     }
     
     .bmi-value {
